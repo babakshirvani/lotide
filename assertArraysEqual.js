@@ -1,21 +1,19 @@
 
-let x = [1, 2, 3];
-let y = ["1", "2", 3];
 
-const assertArrayEqual = function(input) {
-  if (input) {
-    return console.log(`✅✅✅ Assertion Passed: [${x}] === [${y}]`);
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    return console.log(`🛑🛑🛑 Assertion Failed: [${x}] !== [${y}]`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-const eqArrays = function(x, y) {
-  return Array.isArray(x) &&
-    Array.isArray(y) &&
-    x.length === y.length &&
-    x.every((element, index) => element === y[index]);
+const eqArrays = function(arr1, arr2) {
+  return Array.isArray(arr1) &&
+    Array.isArray(arr2) &&
+    arr1.length === arr2.length &&
+    arr1.every((element, index) => element === arr2[index]);
 };
 
 
-assertArrayEqual(eqArrays(x, y));
+assertArraysEqual(eqArrays([1, 2, 3], ["1", "2", 3]), true);
