@@ -33,3 +33,7 @@ assertEqual(myResult["u"], 2);
 assertEqual(myResult["s"], 2);
 assertEqual(myResult["e"], 3);
 assertEqual(myResult["n"], 1);
+
+assertEqual((countLetters('LHL')).l, 2)
+
+module.exports = countLetters;
