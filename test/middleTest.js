@@ -1,13 +1,23 @@
+const assert = require('chai').assert;
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
 
-
-
-
-
-assertArraysEqual(middle([1]), []);   // => ✅✅✅ Assertion Passed: [] === []
-assertArraysEqual(middle([1, 2]), []);  // => ✅✅✅ Assertion Passed: [] === []
-assertArraysEqual(middle([1, 2, 3]), [2]); // => ✅✅✅ Assertion Passed: [2] === [2]
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => ✅✅✅ Assertion Passed: [3] === [3]
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => ✅✅✅ Assertion Passed: [3,4] === [3,4]
-assertArraysEqual(middle(["a", "b", "c", "d", "e", "f"]), ["c", "d"]); // => ✅✅✅ Assertion Passed: [c,d] === [c,d]
+describe("#middle", () => {
+  it("should returns [] for [1]", () => {
+    assert.deepEqual(middle([1]), []);
+  });
+  it("should returns [] for [1, 2]", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
+  it("should returns [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+  it("should returns [3] for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
+  it("should returns [3, 4] for [1, 2, 3, 4, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
+  it(`should returns ["c", "d"] for ["a", "b", "c", "d", "e", "f"]`, () => {
+    assert.deepEqual(middle(["a", "b", "c", "d", "e", "f"]), ["c", "d"]);
+  });
+});
