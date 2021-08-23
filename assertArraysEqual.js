@@ -8,5 +8,5 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-module.exports = assertArraysEqual
+module.exports = assertArraysEqual;
 
